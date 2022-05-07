@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="0dp"
+    android:orientation="vertical"
+    tools:context=".ProductDetail">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp">
+
+        <!--    top -->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:backgroundTint="#80FFFFFF"-->
+<!--            android:backgroundTintMode="src_over">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:background="@drawable/bg_iconback"-->
+<!--                app:srcCompat="@drawable/ic_back" />-->
+<!--        </LinearLayout>-->
+
+        <!--    bottom-->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-33dp"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewPager_slider">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--slider-->
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indidcator_slider"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_marginStart="180dp"
+                    android:layout_marginTop="0dp"
+                    app:layout_constraintStart_toStartOf="@+id/viewPager_slider"
+                    app:layout_constraintTop_toBottomOf="@+id/viewPager_slider" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/ic_cat_bg"
+                    android:fontFamily="@font/rubik_medium"
+                    android:gravity="center"
+                    android:text="Camera"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@+id/viewPager_slider"
+                    app:layout_constraintTop_toBottomOf="@id/viewPager_slider" />
+
+
+                <TextView
+                    android:id="@+id/pro_Name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:fontFamily="@font/rubik_bold"
+                    android:text="Product item"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView12"
+                    app:layout_constraintStart_toStartOf="@+id/textView7"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/rubik_bold"
+                    android:text="$ 15.00"
+                    android:textColor="@color/color_proDe"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/pro_Name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/pro_Name" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar_pro"
+                    style="@android:style/Widget.Holo.RatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:isIndicator="false"
+                    android:progressTint="@color/color_proDe"
+                    android:rating="5"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    android:stepSize="0.5"
+                    android:transformPivotX="0dp"
+                    android:transformPivotY="0dp"
+                    app:layout_constraintStart_toStartOf="@+id/pro_Name"
+                    app:layout_constraintTop_toBottomOf="@+id/pro_Name" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tablayout_pro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    app:layout_constraintStart_toStartOf="@+id/ratingBar_pro"
+                    app:layout_constraintTop_toBottomOf="@+id/ratingBar_pro"
+                    app:tabIndicatorColor="@color/color_proDe"
+                    app:tabSelectedTextColor="@color/color_proDe">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monday" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tuesday" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wednesday" />
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewTabLayout"
+                    android:layout_width="363dp"
+                    android:layout_height="273dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.488"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tablayout_pro"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_goneMarginTop="0dp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="-5dp"
+            android:background="@drawable/shadow">
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/button2"
+                app:srcCompat="@drawable/ic_minus" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="50dp"
+                android:layout_height="53dp"
+                android:fontFamily="@font/rubik_medium"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+                app:layout_constraintStart_toEndOf="@+id/imageView8"
+                app:layout_constraintTop_toTopOf="@+id/imageView8"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView14"
+                app:layout_constraintStart_toEndOf="@+id/textView14"
+                app:layout_constraintTop_toTopOf="@+id/textView14"
+                app:srcCompat="@drawable/ic_plus2" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="180dp"
+                android:layout_height="60dp"
+                android:background="@drawable/detail_page_cart_button_bg"
+                android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
+                android:fontFamily="@font/rubik_medium"
+                android:padding="16dp"
+                android:paddingRight="16dp"
+                android:text="Add to Cart"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>
